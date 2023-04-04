@@ -42,7 +42,7 @@
     </el-container>
   </div>
 </template>
-
+ 
 <script setup lang="ts">
 import breadcrumb from '@/components/BreadCrumb/index.vue'
 import router from '@/router';
