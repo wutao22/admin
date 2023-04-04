@@ -1,6 +1,6 @@
 <template>
     <el-card>
-        首页
+    index
         <!-- <div class="glass" style="width: 100px;height: 120px;background-color: cornflowerblue;">
 
         </div> -->
