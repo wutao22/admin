@@ -1,6 +1,7 @@
 <template>
     <el-card>
     index
+    <table></table>
         <!-- <div class="glass" style="width: 100px;height: 120px;background-color: cornflowerblue;">
 
         </div> -->
@@ -26,6 +27,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import Table from '@/components/Table/index.vue'
 // interface TodoItem {
 //     msg: string,
 //     done: boolean

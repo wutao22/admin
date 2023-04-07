@@ -22,7 +22,7 @@ export default defineConfig({
     hmr: true,
     proxy: {
       '/api': {
-        target: 'http://47.97.213.89:8081',
+        target: 'http://47.97.213.89:8081', 
         changeOrigin: true,
         // pathRewrite: {
         //   '^/api': 

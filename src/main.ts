@@ -6,7 +6,7 @@ import router from './router'
 import '@/styles/index.scss'
 // 按需导入组件
 import { globalRegister } from './global'
-import  '@/service'
+// import  '@/service'
 import {get, post} from '@/service'
 
 import * as ElIcons from '@element-plus/icons-vue'

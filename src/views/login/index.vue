@@ -1,52 +1,29 @@
 <template>
   <div class="login-container">
-    <el-form
-      ref="loginForm"
-      :model="loginForm"
-      :rules="loginRules"
-      class="login-form"
-      auto-complete="on"
-      label-position="left"
-    >
+    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on"
+      label-position="left">
       <div class="title-container">
         <h3 class="title">登录</h3>
       </div>
-
       <el-form-item prop="username" class="margin-tb">
         <span class="svg-container">
           <el-icon>
             <component :is="'User'"></component>
           </el-icon>
         </span>
-        <input
-          ref="username"
-          v-model="state.loginForm.username"
-          placeholder="请输入用户名"
-          name="username"
-          type="text"
-          tabindex="1"
-          auto-complete="on"
-        />
+        <input ref="username" v-model="state.loginForm.username" placeholder="请输入用户名" name="username" type="text"
+          tabindex="1" auto-complete="on" />
       </el-form-item>
 
-      <el-form-item prop="password" class="pwd">
+      <el-form-item prop="password" class ="pwd">
         <span class="svg-container">
           <el-icon>
             <component :is="'Lock'"></component>
           </el-icon>
           <!-- <svg-icon icon-class="password" /> -->
         </span>
-        <input
-          :key="passwordType"
-          ref="password"
-          v-model="state.loginForm.password"
-          :type="passwordType"
-          placeholder="请输入用户密码"
-          name="password"
-          tabindex="2"
-          auto-complete="on"
-          @keyup.enter.native="handleLogin"
-        />
+        <input :key="passwordType" ref="password" v-model="state.loginForm.password" :type="passwordType"
+          placeholder="请输入用户密码" name="password" tabindex="2" auto-complete="on" @keyup.enter.native="handleLogin" />
         <span class="show-pwd" @click="showPwd">
           <el-icon>
             <component :is="passwordType === 'password' ? 'View' : 'Hide'"></component>
@@ -54,20 +31,14 @@
         </span>
       </el-form-item>
 
-      <el-button
-        :loading="loading"
-        type="primary"
-        style="width: 100%; margin: 30px 0; padding: 20px;"
-        @click.native.prevent="handleLogin"
-        >登录</el-button
-      >
+      <el-button :loading="loading" type="primary" style="width: 100%; margin: 30px 0; padding: 20px;"
+        @click.native.prevent="handleLogin">登录</el-button>
     </el-form>
   </div>
 </template>
 
 <script setup lang="ts">
 import axios from "axios";
-import { ElForm, ElInput } from "element-plus";
 import {
   onMounted,
   reactive,
@@ -122,6 +93,7 @@ function handleLogin() {
 $bg: #283443;
 $light_gray: #fff;
 $cursor: #fff;
+
 /* reset element-ui css */
 .login-container {
   .title-container {
@@ -144,6 +116,7 @@ $cursor: #fff;
       cursor: pointer;
     }
   }
+
   input {
     display: inline-block;
     height: 46px;
@@ -153,10 +126,12 @@ $cursor: #fff;
     outline: none;
     text-align: left;
     width: 85%;
+
     .el-input__wrapper {
       padding: 0;
       background: transparent;
       box-shadow: none;
+
       .el-input__inner {
         background: transparent;
         border: 0px;
@@ -252,9 +227,11 @@ $light_gray: #eee;
       font-weight: bold;
     }
   }
-.pwd {
-  position: relative;
-}
+
+  .pwd {
+    position: relative;
+  }
+
   .show-pwd {
     position: absolute;
     right: 10px;

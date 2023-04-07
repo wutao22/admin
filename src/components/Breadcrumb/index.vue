@@ -1,7 +1,7 @@
 <template>
     <el-breadcrumb separator="/" separator-class="el-icon-arrow-right">
         <TransitionGroup name="breadcrumb">
-            <el-breadcrumb-item v-for="(item, index) in leverList">
+            <el-breadcrumb-item v-for="(item, index) in leverList" :key="index">
                 <!-- <span v-if="item.redirect === 'noredirect' || index === breadcrumb.length - 1"> {{ item.meta.title }}</span> -->
                 <a  @click.prevent="handleLink(item)">
                     {{ item.meta.title }}
@@ -28,9 +28,7 @@ const pathCompile = (path: string) => {
 // 面包屑
 const leverList = ref([] as Array<RouteLocationMatched>)
 function getBreadCrumb() {
-    console.log('currentRoute', currentRoute)
     let matched = currentRoute.matched.filter(item => item.meta && item.meta.title)
-console.log(matched)
     const first = matched[0];
     if (!isDashboard(first)) {
         matched = [{ path: '/dashboard', meta: { title: '控制台' } } as any].concat(matched)

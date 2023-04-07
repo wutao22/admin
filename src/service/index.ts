@@ -32,7 +32,7 @@ axios.interceptors.response.use(
         }
   
         ElMessage({
-          message: msg || '系统出错',
+          message: msg || '系统出错', 
           type: 'error'
         });
         return Promise.reject(new Error(msg || 'Error'));
@@ -96,6 +96,10 @@ export function post(url: String, params: any) {
             reject(err)
         })
     })
+}
+
+export function copy(obj: any) {
+  return JSON.parse(JSON.stringify(obj))
 }
 
 // 响应码处理
